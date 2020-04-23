@@ -42,7 +42,7 @@ class LumenCaptchaController extends Controller
         $urlDomain = substr(str_replace($request->decodedPath(),'',$request->url()),0,-1);
         $captchaUuid = $this->generate_uuid();
         $captchaData = [
-            'captchaUrl'=>$urlDomain.'/captcha/'.$type.'/'.$captchaUuid,
+            'captchaUrl'=>$urlDomain.'/lumenapi/captcha/'.$type.'/'.$captchaUuid,
             'captchaUuid'=>(string)$captchaUuid
         ];
         return success($captchaData);
